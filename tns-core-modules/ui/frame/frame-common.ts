@@ -3,7 +3,7 @@ import { Frame as FrameDefinition, NavigationEntry, BackstackEntry, NavigationTr
 import { Page } from "../page";
 
 // Types.
-import { View, CustomLayoutView, isIOS, isAndroid, traceEnabled, traceWrite, traceCategories, EventData } from "../core/view";
+import { View, CustomLayoutView, isIOS, isAndroid, traceEnabled, traceWrite, traceCategories, EventData, CSSType } from "../core/view";
 import { resolveFileName } from "../../file-system/file-name-resolver";
 import { knownFolders, path } from "../../file-system";
 import { parse, loadPage } from "../builder";
@@ -161,6 +161,7 @@ export interface NavigationContext {
     isBackNavigation: boolean;
 }
 
+@CSSType("Frame")
 export class FrameBase extends CustomLayoutView implements FrameDefinition {
     public static androidOptionSelectedEvent = "optionSelected";
 

@@ -1,7 +1,7 @@
 ﻿import { Page as PageDefinition, NavigatedData, ShownModallyData } from ".";
 import {
     ContentView, View, eachDescendant, Property, CssProperty, Color, isIOS,
-    booleanConverter, resetCSSProperties, Style, EventData
+    booleanConverter, resetCSSProperties, Style, EventData, CSSType
 } from "../content-view";
 import { Frame, topmost as topmostFrame, resolvePageFromEntry } from "../frame";
 import { ActionBar } from "../action-bar";
@@ -12,6 +12,7 @@ import { profile } from "../../profiling";
 
 export * from "../content-view";
 
+@CSSType("Page")
 export class PageBase extends ContentView implements PageDefinition {
 
     public static navigatingToEvent = "navigatingTo";

@@ -4,7 +4,8 @@ import {
     EditableTextBase, editableProperty, hintProperty, textProperty, colorProperty, placeholderColorProperty,
     borderTopWidthProperty, borderRightWidthProperty, borderBottomWidthProperty, borderLeftWidthProperty,
     paddingTopProperty, paddingRightProperty, paddingBottomProperty, paddingLeftProperty,
-    Length, _updateCharactersInRangeReplacementString, Color, layout
+    Length, _updateCharactersInRangeReplacementString, Color, layout,
+    CSSType
 } from "../editable-text-base";
 import { profile } from "../../profiling";
 
@@ -92,6 +93,7 @@ class UITextViewDelegateImpl extends NSObject implements UIScrollViewDelegate, U
     }
 }
 
+@CSSType("TextView")
 export class TextView extends EditableTextBase implements TextViewDefinition {
     private _ios: UITextView;
     private _delegate: UITextViewDelegateImpl;

@@ -14,6 +14,22 @@ export * from "../../styling/style-properties";
 export function PseudoClassHandler(...pseudoClasses: string[]): MethodDecorator;
 
 /**
+ * Specifies the type name for the instances of this View class,
+ * that is used when matching CSS type selectors.
+ * 
+ * Usage:
+ * ```
+ * @CSSType("Button")
+ * class Button extends View {
+ * }
+ * ```
+ * 
+ * Internally the decorator set `Button.prototype.cssType = "Button"`.
+ * @param type The type name, e. g. "Button", "Label", etc.
+ */
+export function CSSType(type: string): ClassDecorator;
+
+/**
  * Denotes a length number that is in device independent pixel units.
  */
 export type dip = number;
@@ -648,3 +664,11 @@ export const originXProperty: Property<View, number>;
 export const originYProperty: Property<View, number>;
 export const isEnabledProperty: Property<View, boolean>;
 export const isUserInteractionEnabledProperty: Property<View, boolean>;
+
+export namespace ios {
+    export function updateConstraints(controller: any /* UIViewController */, owner: View): void;
+    export function layoutView(controller: any /* UIViewController */, owner: View): void;
+    export class UILayoutViewController {
+        public static initWithOwner(owner: WeakRef<View>): UILayoutViewController;
+    }
+}
