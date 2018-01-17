@@ -208,6 +208,11 @@ export interface IOSActionItemSettings {
      * 23: PageCurl
      */
     systemIcon: number;
+
+    /**
+     * Gets or sets the tintColor if ActionItem icon.
+     */
+    tintColor: string;
 }
 
 /**

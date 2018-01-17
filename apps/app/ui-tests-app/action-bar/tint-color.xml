@@ -1,0 +1,14 @@
+<Page>
+  <Page.actionBar>
+    <ActionBar>
+      <ActionBar.actionItems>
+        <ActionItem ios.systemIcon="15" ios.tintColor="#121212" />
+        <ActionItem ios.systemIcon="12" ios.tintColor="#f44159" />
+        <ActionItem icon="res://add_to_fav" ios.tintColor="#c4a001" />
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout>
+    <Button text="go to cleared page" tap="navigate"/>
+  </StackLayout>
+</Page>

@@ -28,7 +28,8 @@ class TapBarItemHandlerImpl extends NSObject {
 export class ActionItem extends ActionItemBase {
     private _ios: IOSActionItemSettings = {
         position: "left",
-        systemIcon: undefined
+        systemIcon: undefined,
+        tintColor: undefined
     };
 
     public get ios(): IOSActionItemSettings {
@@ -201,6 +202,11 @@ export class ActionBar extends ActionBarBase {
             barButtonItem = UIBarButtonItem.alloc().initWithTitleStyleTargetAction(item.text + "", UIBarButtonItemStyle.Plain, tapHandler, "tap");
         }
 
+        if(item.ios.systemIcon || item.icon){
+            if(item.ios.tintColor){
+                barButtonItem.tintColor = new Color(item.ios.tintColor).ios;
+            }
+        }
         if (item.text) {
             barButtonItem.isAccessibilityElement = true;
             barButtonItem.accessibilityLabel = item.text;

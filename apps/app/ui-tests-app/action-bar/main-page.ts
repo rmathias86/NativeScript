@@ -22,6 +22,6 @@ export function loadExamples() {
     examples.set("modalHiddenActBar", "action-bar/modal-test-hidden-action-bar");
     examples.set("modalShownActBar", "action-bar/modal-test-with-action-bar");
     examples.set("flat", "action-bar/flat");
-
+    examples.set("tintColorForIOS", "action-bar/tint-color");
     return examples;
 }
